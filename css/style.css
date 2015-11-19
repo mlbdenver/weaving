@@ -1,0 +1,248 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Rokkitt|Overlock|Oswald:300,400);
+
+/*Notes
+
+Determine if flexbox is necessary
+Make list stack under input (image disappears) on phone screen
+*/
+
+/*--------Beginning of Site CSS---------- */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width:100%;
+  margin: 0;
+  padding:2%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 300;
+  font-size:0.8rem;
+  background-image: url("../images/concrete.jpg");
+  background-size: cover;
+}
+
+.group:before, .group:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.group:after {
+  clear:both;
+}
+
+.group {
+  float:left;
+  width: 48%;
+  /margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #B6B1A7;
+}
+
+form {
+  /width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+label {
+  float: left;
+  width: 240px;
+  font-size: 0.8rem;
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+input, output {
+  font-size: 0.8rem;
+  height: 40px;
+  line-height: 1.2rem;
+  margin: 0 auto; 
+  list-style: none;
+  padding: 5px;
+  text-align: left;
+  font-family: Lato, sans-serif;
+    background-color: white;
+  transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  border: 1px #bbb solid;
+  border-radius: 4px;
+  box-shadow: 0 1px rgba(34,25,25,0.2) inset, 0 1px #fff;
+}
+input:focus, textarea:focus {
+  outline: solid #6498A4;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  /padding: 10px 0;
+  font-size: 3rem;
+  /line-height: 3.5rem;
+ }
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  }
+h3 {
+  background: #6498A4;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  /padding: 10px 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+p {
+  font-size:1rem;
+  /line-height: 1.5rem;
+
+}
+
+
+.page {
+  width: 80%;
+  margin:auto;
+}
+
+.main {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+   -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  /max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+.banner {
+  /height: 120px;
+  /margin: 10px;
+  /float: left;
+  /width: 40%;
+  margin-bottom: 10px;
+  padding: 15px;
+  /text-align: center;
+  /color: #B8489C;
+  background: #B6B1A7;
+  border-radius: 10px;
+}
+
+.banner h1 {
+  color: #B8489C;
+  font-family: Rokkitt, arial, sans-serif;
+  font-size: 4em;
+  margin: 5px auto;
+}
+
+.banner p {
+  font-size: 1.3em;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.split {
+  /width:50%;
+   / padding:2% 2%;
+    /text-align: center;
+  /float: left;
+}
+
+.split h1, .split h2, .split h3 {
+  /text-align: center;
+}
+.main {
+  float: left;
+  /display:block;
+  /max-width: 50%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.box {
+  /max-width: 80%;
+  margin: 10px auto;
+  /padding: 10px 20px;
+  text-align: center;
+  /border-radius: 10px;
+  background-color: white;
+}
+
+.projectdetails h2 {
+  margin: auto;
+}
+
+form text {
+
+}
+
+.controls button {
+  -moz-box-shadow:inset 0px 1px 0px 0px #e184f3;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #e184f3;
+  box-shadow:inset 0px 1px 0px 0px #e184f3;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c123de), color-stop(1, #a20dbd));
+  background:-moz-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:-webkit-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:-o-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:-ms-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c123de', endColorstr='#a20dbd',GradientType=0);
+  background-color:#c123de;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #a511c0;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #9b14b3;
+}
+.controls button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a20dbd), color-stop(1, #c123de));
+  background:-moz-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:-webkit-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:-o-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:-ms-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a20dbd', endColorstr='#c123de',GradientType=0);
+  background-color:#a20dbd;
+}
+.controls button:active {
+  position:relative;
+  top:1px;
+}
+
+@media (max-width: 640px) {
+.main {
+
+}
+.main img {
+display: none;
+}
+.split {
+  width:100%;
+}
+}
+
