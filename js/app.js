@@ -3,18 +3,18 @@ $(document).ready(function () {
    
     //calculate Width in Reed
     $("#calculatewarp").on("click", function() {
-        var finishedwidth = $('#finishedwidth').val()*1;
-        var finishedlength = $('#finishedlength').val()*1;
-        var drawinpercent = $('#drawin').val()*1;
-        var lengthshrinkpercent = $('#lengthshrink').val()*1;
-        var sett = $('#epi').val()*1;
-        var floating = $('#floating').val()*1;
-        var numpieces = $('#numpieces').val()*1;
-        var loomwaste = $('#loomwaste').val()*1;
-        var takeuppercent = $('#takeup').val()*1;
-        var widthshrinkpercent = $('#widthshrink').val()*1;
-        var hemwidth = $('#hemwidth').val()*1;
-        var fringe = $('#fringe').val()*1;
+        var finishedwidth = parseFloat($('#finishedwidth').val());
+        var finishedlength = parseFloat($('#finishedlength').val());
+        var drawinpercent = parseFloat($('#drawin').val());
+        var lengthshrinkpercent = parseFloat($('#lengthshrink').val());
+        var sett = parseFloat($('#epi').val());
+        var floating = parseFloat($('#floating').val());
+        var numpieces = parseFloat($('#numpieces').val());
+        var loomwaste = parseFloat($('#loomwaste').val());
+        var takeuppercent = parseFloat($('#takeup').val());
+        var widthshrinkpercent = parseFloat($('#widthshrink').val());
+        var hemwidth = parseFloat($('#hemwidth').val());
+        var fringe = parseFloat($('#fringe').val());
 
         var drawin = drawinpercent / 100 * finishedwidth;
         var lengthshrinkage = lengthshrinkpercent * finishedlength / 100;
@@ -26,11 +26,45 @@ $(document).ready(function () {
         var totallength = (numpieces * piecelength) + loomwaste;
         
         $("#widthinreed").text(widthinreed);
+        $("#widthinreed1").text(widthinreed);
         $("#totalends").text(totalends);
         $("#piecelength").text(piecelength);
         $("#totallength").text(totallength);
+        console.log(drawin);
+        console.log('totallength =' + totallength);
 
 
     });
+$("#calculateweft").on("click", function() {
+        var weftwidth = parseFloat($('#widthinreed1').val());
+        var wefttakeuppercent = parseFloat($('#wefttakeuppercent').val());
+        var finishedlength = parseFloat($('#finishedlength').val());
+        var picksperinch = parseFloat($('#picksperinch').val());
+        var numpieces = parseFloat($('#numpieces').val());
+        var widthshrinkpercent = parseFloat($('#widthshrink').val());
+        var piecelength = parseFloat($('#piecelength').val());
+
+        var wefttakeup = wefttakeuppercent / 100;
+        var picklength = weftwidth * (1 + wefttakeup);
+        var weftperinch = picksperinch * picklength;
+        var totalweftyd = (weftperinch * piecelength * numpieces / 36).toFixed(2);
+        
+        
+        $("#picklength").text(picklength);
+        $("#totalweft").text(totalweftyd).toFixed(2);
+        console.log('picklength = ' + picklength);
+        console.log('weftperinch = ' + weftperinch);
+        console.log('piecelength = ' + piecelength);
+        console.log('totalweft = ' + totalweftyd);
+
+
+
+    });
+
+    $("#resetwarp").on("click", function() {
+        $('#warpform').find('input:text, output').val('');
+        console.log('clearing form');
+   
+    })
     
     });

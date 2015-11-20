@@ -11,45 +11,90 @@
   <script src="js/app.js"></script>
 </head>
 <body id="container">
-
-    <section class="banner">
-        <h1>Weaving Calculator & Project Planner</h1>
-        <p>Welcome to my weaving calculator and project planner! Please feel free to use this planner and let me know how you'd like to see it improved. </p>
-    </section>
+  <section class="banner">
+    <h1>Weaving Calculator & Project Planner</h1>
+    <p>Welcome to my weaving calculator and project planner! Please feel free to use this planner and let me know how you'd like to see it improved. </p>
+  </section>
       <section class="main">  
-        <form class="group">
+        <div class="group warpform">
           <h3>Warp</h3>
-              <label for="finishedwidth">Desired width (inches)</label><input type="text" id="finishedwidth" title="Enter the desired width of your finished product"/> <br>
-              <label for="drawin">Draw-in (%) </label><input type="text" id="drawin" title="Enter the expected draw-in as a percentage"/> <br>
-              <label for="widthshrink">Width Shrinkage (%) </label><input type="text" id="widthshrink" title="Enter the estimated shrinkage width-wise"/> <br>
-              <label for="widthinreed">Width in Reed</label> <input type="text" id="widthinreed"  /><br>
-              <label for="epi">E.P.I. </label><input type="text" id="epi" title="Enter the sett (in ends per inch) of the project"/> <br>
-              <label for="floating"># of floating selvedges</label> <input type="text" id="floating" /><br>
-              <label for="totalends">Total Ends</label><input type="text" id="totalends" value="" /><br>
-              <label for="numpieces">Number of Pieces </label><input type="text" id="numpieces" value="1" /> <br>
-              <label for="finishedlength">Desired length (inches)</label><input type="text" id="finishedlength" /><br>
-              <label for="loomwaste">Loom waste </label><input type="text" id="loomwaste" /><br>
-              <label for="fringe">Fringe length (each side)</label><input type="text" id="fringe" /> <br>
-              <label for="takeup">Take-up (%)</label><input type="text" id="takeup" /> <br>
-              <label for="lengthshrinkage">Length Shrinkage (%) </label><input type="text" id="lengthshrink" /> <br>
-              <label for="hemwidth">Hem and other add'l length </label><input type="text" id="hemwidth" /><br>
-              <label for="totallength">Total Length</label><input type="text" id="totallength" value="" /><br>
-              <label for="piecelength">Weave each piece to</label> <input type="text" id="piecelength" />
-              <div class="controls">
-                <button id="calculatewarp">Calculate Warp</button>
-                <button id="reset" type="reset" value="reset">Clear Entries</button>
+          <div class="innerform">
+              <div class="formfield">
+                <label for="finishedwidth">Desired object width (inches)</label><input type="text" id="finishedwidth" title="Enter the desired width of your finished product" autocomplete="off"/> 
               </div>
-            </form>
-        <form class="group">
-          <h3>Weft</h3>
-          <div class="controls">
-                <button id="calculateweft">calculate</button>
-                <button id="reset" type="reset" value="reset">reset</button>
+              <div class="formfield">
+                <label for="drawin">Draw-in (%) </label><input type="text" id="drawin" title="Enter the expected draw-in as a percentage" value="10"autocomplete="off" /> 
+              </div>
+              <div class="formfield">
+                <label for="widthshrink">Width Shrinkage (%) </label><input type="text" id="widthshrink" title="Enter the estimated shrinkage width-wise" value="10" autocomplete="off" /> 
+              </div>
+              <div class="formfield calc">
+                <label for="widthinreed">Width in Reed (inches) - CALCULATED</label> <output id="widthinreed" >
+              </div>
+              <div class="formfield">
+                <label for="epi">E.P.I. </label><input type="text" id="epi" title="Enter the sett (in ends per inch) of the project" autocomplete="off"/>
+              </div>
+              <div class="formfield">
+                <label for="floating"># of floating selvedges</label> <input type="text" id="floating" value="0" autocomplete="off" />
+              </div>
+              <div class="formfield calc">
+                <label for="totalends">Total Ends - CALCULATED</label><output type="text" id="totalends" value="" />
+              </div>
+              <div class="formfield">
+                <label for="numpieces">Number of Pieces </label><input type="text" id="numpieces" value="1" autocomplete="off"/>
+              </div>
+              <div class="formfield">
+                <label for="finishedlength">Desired length (inches)</label><input type="text" id="finishedlength" autocomplete="off"/>
+              </div>
+              <div class="formfield">
+                <label for="loomwaste">Loom waste (inches)</label><input type="text" id="loomwaste" autocomplete="off" />
+              </div>
+              <div class="formfield">
+                <label for="fringe">Fringe length (inches, per side)</label><input type="text" id="fringe" value="0" autocomplete="off"/>
+              </div>
+              <div class="formfield">
+                <label for="takeup">Warp take-up (%)</label><input type="text" id="takeup" value="10" autocomplete="off"/>
+              </div>
+              <div class="formfield">
+                <label for="lengthshrinkage">Length Shrinkage (%) </label><input type="text" id="lengthshrink" value="10" autocomplete="off" /> 
+              </div>
+              <div class="formfield">
+                <label for="hemwidth">Hem and other (inches)</label><input type="text" id="hemwidth" value="0" autocomplete="off" />
+              </div>
+              <div class="formfield calc">
+                <label for="totallength">Total Length (inches) - CALCULATED</label><output type="text" id="totallength" value="" />
+              </div>
+              <div class="formfield calc">
+                <label for="piecelength">Weave each piece to (inches) - CALCULATED</label> <output type="text" id="piecelength" />
+              </div>
+              <div class="controls">
+                <button type="button" id="calculatewarp">Calculate Warp</button>
+                <button id="resetwarp" type="button">Clear Entries</button>
+              </div>
             </div>
-          </form>
-          <div class="group">
-            
           </div>
+        <div class="group weftform">
+          <h3>Weft</h3>
+            <div class="innerform">
+              <div class="formfield calc">
+                <label for="widthinreed1">Width in Reed (inches) - CALCULATED</label> <output id="widthinreed1" >
+              </div>
+              <div class="formfield">
+                <label for="wefttakeuppercent">Weft take-up (%) </label><input type="text" id="wefttakeuppercent" title="Enter the estimated weft take-up percentage" value="10" autocomplete="off" /> 
+              </div>
+              <div class="formfield">
+                <label for="picksperinch">Picks per inch (PPI)</label><input type="text" id="picksperinch" title="Enter the intended weft picks per inch" autocomplete="off"/> 
+              </div>
+              <div class="formfield calc">
+                <label for="totalweft">Total length of weft (yards) - CALCULATED</label> <output id="totalweft" >
+              </div>
+              <div class="controls">
+                  <button type="button" id="calculateweft">Calculate Weft</button>
+                  <button id="resetweft" type="button" >Clear entries</button>
+              </div>
+            </div>
+          </div>
+          <div class="group">
          <div class="projectdetails">
           <h3>Project Details (optional)</h3>
             <input type="text" id="projectname" placeholder="Project Name" maxlength="80" >
@@ -63,6 +108,7 @@
             <div class="controls">
               <button id="print" type="button" value="print">print</button>
             </div>
+          </div>
             
         </div>
         

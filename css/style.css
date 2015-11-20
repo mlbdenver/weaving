@@ -16,13 +16,17 @@ Make list stack under input (image disappears) on phone screen
   padding: 0;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   width:100%;
   margin: 0;
   padding:2%;
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 300;
-  font-size:0.8rem;
+  font-size:1rem;
   background-image: url("../images/concrete.jpg");
   background-size: cover;
 }
@@ -39,12 +43,12 @@ body {
 }
 
 .group {
-  float:left;
-  width: 48%;
+  width: 49%;
   /margin: 10px;
-  padding: 15px;
+  /padding: 15px;
   border-radius: 10px;
   background: #B6B1A7;
+  overflow: hidden;
 }
 
 form {
@@ -53,35 +57,60 @@ form {
   padding: 10px;
 }
 
+.formfield {
+  clear: both;
+  display: block;
+  padding: 0 15px;
+  margin-top: 5px;
+  height: 28px;
+  vertical-align: middle;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calc {
+  background: white;
+}
+
 label {
+  display:inline-block;
   float: left;
-  width: 240px;
-  font-size: 0.8rem;
+  width: 300px;
+  font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
   text-align: left;
-  padding-top: 10px;
-  padding-left: 10px;
+  margin: 8px auto;
+  vertical-align: middle;
 }
 input, output {
-  font-size: 0.8rem;
-  height: 40px;
-  line-height: 1.2rem;
-  margin: 0 auto; 
+  float: right;
+  font-size: 1rem;
+  height: 24px;
+  width: 100px;
+  line-height: 1.4rem;
+  margin: 2px auto; 
   list-style: none;
-  padding: 5px;
+  padding: 3px;
   text-align: left;
   font-family: Lato, sans-serif;
     background-color: white;
   transition: all 0.2s ease-in-out 0s;
   -webkit-transition: all 0.2s ease-in-out 0s;
   -moz-transition: all 0.2s ease-in-out 0s;
-  border: 1px #bbb solid;
+  /border: 1px #bbb solid;
   border-radius: 4px;
-  box-shadow: 0 1px rgba(34,25,25,0.2) inset, 0 1px #fff;
+  /box-shadow: 0 1px rgba(34,25,25,0.2) inset, 0 1px #fff;
+  vertical-align: middle;
+  color: gray;
 }
 input:focus, textarea:focus {
   outline: solid #6498A4;
 }
+
+output {
+  background: #dcdcdc;
+}
+
 h1 {
   text-align: center;
   color: #fff;
@@ -99,9 +128,11 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  /padding: 10px 0;
+  padding: 10px 0;
+  margin-bottom: 10px;
   font-size: 1.5rem;
   line-height: 2rem;
+
 }
 p {
   font-size:1rem;
@@ -156,6 +187,18 @@ p {
   text-transform: uppercase;
 }
 
+.innerform {
+  padding: 0 15px;
+}
+
+.warpform {
+  float:left;
+}
+
+.weftform {
+  float:right;
+}
+
 .split {
   /width:50%;
    / padding:2% 2%;
@@ -167,12 +210,11 @@ p {
   /text-align: center;
 }
 .main {
-  float: left;
+  /float: left;
   /display:block;
   /max-width: 50%;
   height: auto;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -216,6 +258,7 @@ form text {
   font-size:15px;
   font-weight:bold;
   padding:6px 24px;
+  margin: 15px;
   text-decoration:none;
   text-shadow:0px 1px 0px #9b14b3;
 }
