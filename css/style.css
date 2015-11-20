@@ -157,8 +157,7 @@ p {
   /max-width: 80%;
   margin-right: auto;
   margin-left: auto;
-  
-}
+  }
 
 .banner {
   /height: 120px;
@@ -218,22 +217,11 @@ p {
   text-align: center;
 }
 
-.box {
-  /max-width: 80%;
-  margin: 10px auto;
-  /padding: 10px 20px;
-  text-align: center;
-  /border-radius: 10px;
-  background-color: white;
-}
 
 .projectdetails h2 {
   margin: auto;
 }
 
-form text {
-
-}
 
 .controls button {
   -moz-box-shadow:inset 0px 1px 0px 0px #e184f3;

@@ -1,8 +1,11 @@
 $(document).ready(function () {
 
-   
+   //Declare Global Variables
+        
+
     //calculate Width in Reed
     $("#calculatewarp").on("click", function() {
+
         var finishedwidth = parseFloat($('#finishedwidth').val());
         var finishedlength = parseFloat($('#finishedlength').val());
         var drawinpercent = parseFloat($('#drawin').val());
@@ -30,14 +33,13 @@ $(document).ready(function () {
         $("#totalends").text(totalends);
         $("#piecelength").text(piecelength);
         $("#totallength").text(totallength);
-        console.log(drawin);
-        console.log('totallength =' + totallength);
-
-
+        console.log('widthinreed = ' + widthinreed);
+        console.log('totallength = ' + totallength);
     });
-$("#calculateweft").on("click", function() {
+
+    $("#calculateweft").on("click", function() {
         var weftwidth = parseFloat($('#widthinreed1').val());
-        var wefttakeuppercent = parseFloat($('#wefttakeuppercent').val());
+        var wefttakeuppercent = parseFloat($('#wefttakeup').val());
         var finishedlength = parseFloat($('#finishedlength').val());
         var picksperinch = parseFloat($('#picksperinch').val());
         var numpieces = parseFloat($('#numpieces').val());
@@ -51,20 +53,36 @@ $("#calculateweft").on("click", function() {
         
         
         $("#picklength").text(picklength);
-        $("#totalweft").text(totalweftyd).toFixed(2);
+        $("#totalweft").text(totalweftyd);
         console.log('picklength = ' + picklength);
         console.log('weftperinch = ' + weftperinch);
         console.log('piecelength = ' + piecelength);
         console.log('totalweft = ' + totalweftyd);
 
-
-
     });
 
-    $("#resetwarp").on("click", function() {
-        $('#warpform').find('input:text, output').val('');
-        console.log('clearing form');
+   $("#resetwarp").on("click", function() {
+        $('.warpform').find('input:text, output').val('');
+        $('#drawin').val(10);
+        $('#widthshrink').val(10);
+        $('#numpieces').val(1);
+        $('#fringe').val(0);
+        $('#takeup').val(10);
+        $('#lengthshrink').val(10);
+        $('#floating').val(0);
+        $('#hemwidth').val(0);
+        $('#widthinreed').val('');
+        $('#widthinreed1').val('');
+        $("#totalweft").val('');
+
+        console.log('clearing warp form');
+    });
+   $("#resetweft").on("click", function() {
+        $('#wefttakeup').val(10);
+        $('#picksperinch').val('');
+        $('#totalweft').val('');
+        console.log('clearing weft form');
    
-    })
+    });
     
     });

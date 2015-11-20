@@ -26,10 +26,10 @@
                 <label for="drawin">Draw-in (%) </label><input type="text" id="drawin" title="Enter the expected draw-in as a percentage" value="10"autocomplete="off" /> 
               </div>
               <div class="formfield">
-                <label for="widthshrink">Width Shrinkage (%) </label><input type="text" id="widthshrink" title="Enter the estimated shrinkage width-wise" value="10" autocomplete="off" /> 
+                <label for="widthshrink">Width shrinkage (%) </label><input type="text" id="widthshrink" title="Enter the estimated shrinkage width-wise" value="10" autocomplete="off" /> 
               </div>
               <div class="formfield calc">
-                <label for="widthinreed">Width in Reed (inches) - CALCULATED</label> <output id="widthinreed" >
+                <label for="widthinreed">Width in reed (inches) - CALCULATED</label> <output id="widthinreed" >
               </div>
               <div class="formfield">
                 <label for="epi">E.P.I. </label><input type="text" id="epi" title="Enter the sett (in ends per inch) of the project" autocomplete="off"/>
@@ -38,10 +38,10 @@
                 <label for="floating"># of floating selvedges</label> <input type="text" id="floating" value="0" autocomplete="off" />
               </div>
               <div class="formfield calc">
-                <label for="totalends">Total Ends - CALCULATED</label><output type="text" id="totalends" value="" />
+                <label for="totalends">Total ends - CALCULATED</label><output type="text" id="totalends" value="" />
               </div>
               <div class="formfield">
-                <label for="numpieces">Number of Pieces </label><input type="text" id="numpieces" value="1" autocomplete="off"/>
+                <label for="numpieces">Number of pieces </label><input type="text" id="numpieces" value="1" autocomplete="off"/>
               </div>
               <div class="formfield">
                 <label for="finishedlength">Desired length (inches)</label><input type="text" id="finishedlength" autocomplete="off"/>
@@ -56,61 +56,60 @@
                 <label for="takeup">Warp take-up (%)</label><input type="text" id="takeup" value="10" autocomplete="off"/>
               </div>
               <div class="formfield">
-                <label for="lengthshrinkage">Length Shrinkage (%) </label><input type="text" id="lengthshrink" value="10" autocomplete="off" /> 
+                <label for="lengthshrinkage">Length shrinkage (%) </label><input type="text" id="lengthshrink" value="10" autocomplete="off" /> 
               </div>
               <div class="formfield">
                 <label for="hemwidth">Hem and other (inches)</label><input type="text" id="hemwidth" value="0" autocomplete="off" />
               </div>
               <div class="formfield calc">
-                <label for="totallength">Total Length (inches) - CALCULATED</label><output type="text" id="totallength" value="" />
+                <label for="totallength">Total length (inches) - CALCULATED</label><output type="text" id="totallength" value="" />
               </div>
               <div class="formfield calc">
                 <label for="piecelength">Weave each piece to (inches) - CALCULATED</label> <output type="text" id="piecelength" />
               </div>
               <div class="controls">
-                <button type="button" id="calculatewarp">Calculate Warp</button>
-                <button id="resetwarp" type="button">Clear Entries</button>
+                <button type="button" id="calculatewarp" >Calculate warp</button>
+                <button id="resetwarp" type="button" >Clear warp entries</button>
               </div>
             </div>
           </div>
-        <div class="group weftform">
-          <h3>Weft</h3>
-            <div class="innerform">
-              <div class="formfield calc">
-                <label for="widthinreed1">Width in Reed (inches) - CALCULATED</label> <output id="widthinreed1" >
-              </div>
-              <div class="formfield">
-                <label for="wefttakeuppercent">Weft take-up (%) </label><input type="text" id="wefttakeuppercent" title="Enter the estimated weft take-up percentage" value="10" autocomplete="off" /> 
-              </div>
-              <div class="formfield">
-                <label for="picksperinch">Picks per inch (PPI)</label><input type="text" id="picksperinch" title="Enter the intended weft picks per inch" autocomplete="off"/> 
-              </div>
-              <div class="formfield calc">
-                <label for="totalweft">Total length of weft (yards) - CALCULATED</label> <output id="totalweft" >
-              </div>
-              <div class="controls">
-                  <button type="button" id="calculateweft">Calculate Weft</button>
-                  <button id="resetweft" type="button" >Clear entries</button>
+          <div class="group weftform">
+            <h3>Weft</h3>
+              <div class="innerform">
+                <div class="formfield calc">
+                  <label for="widthinreed1">Width in reed (inches) - from warp calculation</label> <output id="widthinreed1" >
+                </div>
+                <div class="formfield">
+                  <label for="wefttakeup">Weft take-up (%) </label><input type="text" id="wefttakeup" title="Enter the estimated weft take-up percentage" value="10" autocomplete="off" /> 
+                </div>
+                <div class="formfield">
+                  <label for="picksperinch">Picks per inch (PPI)</label><input type="text" id="picksperinch" title="Enter the intended weft picks per inch" autocomplete="off"/> 
+                </div>
+                <div class="formfield calc">
+                  <label for="totalweft">Total length of weft (yards) - CALCULATED</label> <output id="totalweft" >
+                </div>
+                <div class="controls">
+                    <button type="button" id="calculateweft">Calculate weft</button>
+                    <button id="resetweft" type="button" >Clear weft entries</button>
+                </div>
               </div>
             </div>
-          </div>
           <div class="group">
-         <div class="projectdetails">
-          <h3>Project Details (optional)</h3>
-            <input type="text" id="projectname" placeholder="Project Name" maxlength="80" >
-            <input type="text" id="projectdate" placeholder="Project Date" maxlength="20"><br>
-            <input type="text" id="weavestructure" placeholder="Weave Structure" maxlength="60">
-            <input type="text" id="threadingpattern" placeholder="Threading Pattern" maxlength="60">
-            <input type="text" id="treadlingpattern" placeholder="Treddling Pattern " maxlength="60">
-            <input type="text" id="loom" placeholder="Loom" maxlength="40">
-            <input type="text" id="warpyarn" placeholder="Warp Yarn" maxlength="40">
-            <input type="text" id="weftyarn" placeholder="Weft Yarn" maxlength="40">
-            <div class="controls">
-              <button id="print" type="button" value="print">print</button>
-            </div>
+            <h3>Project Details (optional)</h3>
+              <input type="text" id="projectname" placeholder="Project name" maxlength="80" >
+              <input type="text" id="projectdate" placeholder="Project date" maxlength="20"><br>
+              <input type="text" id="weavestructure" placeholder="Weave structure" maxlength="60">
+              <input type="text" id="threadingpattern" placeholder="Threading pattern" maxlength="60">
+              <input type="text" id="treadlingpattern" placeholder="Treddling pattern " maxlength="60">
+              <input type="text" id="loom" placeholder="Loom" maxlength="40">
+              <input type="text" id="warpyarn" placeholder="Warp yarn" maxlength="40">
+              <input type="text" id="weftyarn" placeholder="Weft yarn" maxlength="40">
+              <input type="textarea" id="notes" placeholder="Notes" maxlength="40">
+              <div class="controls">
+                <button id="print" type="button" value="print">Print</button>
+              </div>
           </div>
-            
-        </div>
+          
         
     
     </section>
