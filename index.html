@@ -13,10 +13,10 @@
 <body id="container">
   <section class="banner">
     <h1>Weaving Calculator & Project Planner</h1>
-    <p>Welcome to my weaving calculator and project planner! Please feel free to use this planner and let me know how you'd like to see it improved. </p>
+    <p>Welcome to my weaving calculator and project planner! Please feel free to use this planner send me feedback. </p>
   </section>
       <section class="main">  
-        <div class="group warpform">
+        <div class="group calcs">
           <h3>Warp</h3>
           <div class="innerform">
               <div class="formfield">
@@ -73,7 +73,7 @@
               </div>
             </div>
           </div>
-          <div class="group weftform">
+          <div class="group calcs">
             <h3>Weft</h3>
               <div class="innerform">
                 <div class="formfield calc">
@@ -94,20 +94,45 @@
                 </div>
               </div>
             </div>
-          <div class="group">
-            <h3>Project Details (optional)</h3>
-              <input type="text" id="projectname" placeholder="Project name" maxlength="80" >
-              <input type="text" id="projectdate" placeholder="Project date" maxlength="20"><br>
-              <input type="text" id="weavestructure" placeholder="Weave structure" maxlength="60">
-              <input type="text" id="threadingpattern" placeholder="Threading pattern" maxlength="60">
-              <input type="text" id="treadlingpattern" placeholder="Treddling pattern " maxlength="60">
-              <input type="text" id="loom" placeholder="Loom" maxlength="40">
-              <input type="text" id="warpyarn" placeholder="Warp yarn" maxlength="40">
-              <input type="text" id="weftyarn" placeholder="Weft yarn" maxlength="40">
-              <input type="textarea" id="notes" placeholder="Notes" maxlength="40">
+          <div class="group projectdetails">
+            <h3>Project Details (for printout)</h3>
+            <div class="innerform">
+              <div class="formfield large">
+                <label for="projectname">Project name</label><input type="text" id="projectname" title="Enter project name" autocomlete="off"/>
+              </div>
+              <div class="formfield small">
+                <label for="projectdate">Project date</label><input type="text" id="projectdate" title="Enter project date" autocomlete="off"/>
+              </div>
+              
+              <div class="formfield medium">
+                <label for="weavestructure">Weave structure</label><input type="text" id="weavestructure" title="What is the weave structure? ie tabby, twill"  />
+              </div>
+              <div class="formfield medium">
+                <label for="threadingpattern">Threading pattern</label>
+                <input type="text" id="threadingpattern"  />
+              </div>
+              <div class="formfield medium">
+                <label for="treadlingpattern">Treadling pattern</label>
+                <input type="text" id="treadlingpattern" placeholder="Treddling pattern " />
+              </div>
+              <div class="formfield large">
+                <label for="loom">Loom</label><input type="text" id="loom"  />
+              </div>
+              <div class="formfield medium">
+                <label for="warpyarn">Warp yarn</label><input type="text" id="warpyarn"  />
+              </div>
+              <div class="formfield medium">
+                <label for="weftyarn">Weft yarn</label><input type="text" id="weftyarn"  />
+              </div>
+              <div class="formfield exlarge">
+                <label for="notes">Notes</label>
+                <textarea id="notes"  cols="200" rows="8" autocorrect="off" wrap="soft"/></textarea>
+              </div>
+               </div>
               <div class="controls">
                 <button id="print" type="button" value="print">Print</button>
               </div>
+           
           </div>
           
         
