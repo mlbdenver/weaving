@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans|Rokkitt|Overlock|Lobster|Oswald:300,400);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Rokkitt|Overlock|Lato|Lobster|Oswald:300,400);
 
 /*Notes
 
@@ -22,7 +22,7 @@ body {
   width:100%;
   margin: 0;
   /padding:2%;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: Lato, Arial, sans-serif;
   font-weight: 300;
   font-size:1rem;
   background-color: #99B2B7;
@@ -59,7 +59,7 @@ h3 {
   /margin: 10px;
   /float: left;
   /width: 40%;
-  margin-bottom: 10px;
+  /margin-bottom: 10px;
   padding: 15px;
   /text-align: center;
   /color: #B8489C;
@@ -71,8 +71,9 @@ h3 {
   color: #D5DED9;
   font-family: Rokkitt, arial, sans-serif;
   font-size: 4em;
-  margin: 5px;
+  margin: 0;
   text-align: left;
+  text-shadow: 0px 2px 3px #000;
 }
 
 .banner p {
@@ -95,6 +96,7 @@ h3 {
           justify-content: space-around;
   text-align: center;
   height: auto;
+  padding: 15px 25px;
   margin: 0 auto;
   }
 
@@ -104,7 +106,7 @@ h3 {
   min-width: 475px;
   margin: 10px 0;
   /padding: 15px;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #D9CEB2;
   overflow: hidden;
   float:left;
@@ -131,7 +133,7 @@ h3 {
   margin-bottom: 10px;
   font-size: 3rem;
   /line-height: 3.6rem;
-  text-shadow: 0px 2px 3px #000;;
+  text-shadow: 0px 2px 3px #000;
 }
 
 .innerform {
@@ -145,7 +147,7 @@ h3 {
   margin-top: 5px;
   height: 28px;
   vertical-align: middle;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -155,7 +157,7 @@ label {
   float: left;
   width: 300px;
   font-size: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  /font-family: 'Open Sans', sans-serif;
   text-align: left;
   margin: 8px auto;
   vertical-align: middle;
@@ -167,22 +169,25 @@ input, output {
   line-height: 1.4rem;
   margin: 2px auto; 
   list-style: none;
-  padding: 3px;
+  padding: 5px;
   text-align: left;
-  font-family: Lato, sans-serif;
-    background-color: white;
+  /font-family: 'Open Sans', sans-serif;
+  background-color: white;
   transition: all 0.2s ease-in-out 0s;
   -webkit-transition: all 0.2s ease-in-out 0s;
   -moz-transition: all 0.2s ease-in-out 0s;
-  /border: 1px #bbb solid;
-  border-radius: 2px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  border-radius: 5px;
   /box-shadow: 0 1px rgba(34,25,25,0.2) inset, 0 1px #fff;
   vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
   color: gray;
 }
 
 input:focus, textarea:focus {
-  outline: solid #6498A4;
+  border-bottom: solid 2px #969696;
 }
 
 output {
@@ -255,27 +260,29 @@ output {
 
 /* ----------------Buttons--------------- */
 .controls button {
-  box-shadow:inset 0px 1px 0px 0px #e184f3;
-  background:linear-gradient(to bottom, #99B2B7 5%, #D5DED9 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#99B2B7', endColorstr='#D5DED9',GradientType=0);
+  box-shadow:none;
+  /background:linear-gradient(to bottom, #99B2B7 5%, #D5DED9 100%);
+  /filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#99B2B7', endColorstr='#D5DED9',GradientType=0);
   background-color:#99B2B7;
-  border-radius:6px;
-  border:1px solid #99B2B7;
+  border-radius:5px;
+  /border:1px solid #99B2B7;
+  border: none;
   display:inline-block;
   cursor:pointer;
+  color: #7A6A53;
   color:#ffffff;
-  font-family:Arial;
-  font-size:15px;
-  font-weight:bold;
-  padding:6px 24px;
+  /font-family:Arial;
+  font-size:1.2rem;
+  /font-weight:bold;
+  padding:16px 24px;
   margin: 15px;
   text-decoration:none;
-  text-shadow:0px 1px 0px #9b14b3;
+  /text-shadow:0px 1px 0px #948C75;
 }
 .controls button:hover {
-  background:linear-gradient(to bottom, #D5DED9 5%, #99B2B7 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5DED9', endColorstr='#99B2B7',GradientType=0);
-  background-color:#D5DED9;
+  /background:linear-gradient(to bottom, #D5DED9 5%, #99B2B7 100%);
+  /filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5DED9', endColorstr='#99B2B7',GradientType=0);
+  background-color:#948C75;
 }
 .controls button:active {
   position:relative;
