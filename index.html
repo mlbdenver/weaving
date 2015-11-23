@@ -11,46 +11,54 @@
   <script src="js/app.js"></script>
 </head>
 <body id="container">
-  <section class="banner">
-    <h1>Weaving Calculator & Project Planner</h1>
-    <p>Welcome to my weaving calculator and project planner! Please feel free to use this planner send me feedback. </p>
+  <section class="banner clear">
+    <div class="heading">
+      <h1>Weaving Calculator & Project Planner</h1>
+      <p>Welcome to my weaving calculator and project planner! Calculate your warp measurements first, then calculate the weft</p>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="#help">Help</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#feedback">Contact</a></li>
+      </ul>
+    </div>
   </section>
   <section class="main">  
-    <div class="group calcs">
-      <h3>Warp</h3>
+    <div class="group calcs warpform clear">
+      <h2>Warp</h2>
       <div class="innerform">
         <div class="formfield">
-          <label for="finishedwidth">Desired object width (inches)</label><input type="text" id="finishedwidth" title="Enter the desired width of your finished product" autocomplete="off"/> 
+          <label for="finishedwidth">Desired object width (inches)</label><input type="text" id="finishedwidth" title="Enter the desired width of your finished product" required autocomplete="off"/> 
         </div>
         <div class="formfield">
-          <label for="drawin">Draw-in (%) </label><input type="text" id="drawin" title="Enter the expected draw-in as a percentage" value="10"autocomplete="off" /> 
+          <label for="drawin">Draw-in (%) </label><input type="text" id="drawin" title="Enter the expected draw-in as a percentage" value="10" autocomplete="off" /> 
         </div>
         <div class="formfield">
           <label for="widthshrink">Width shrinkage (%) </label><input type="text" id="widthshrink" title="Enter the estimated shrinkage width-wise" value="10" autocomplete="off" /> 
         </div>
         <div class="formfield calc">
-          <label for="widthinreed">Width in reed (inches) - CALCULATED</label> <output id="widthinreed" >
+          <label for="widthinreed">Width in reed (inches)</label> <output id="widthinreed" >
         </div>
         <div class="formfield">
-          <label for="epi">E.P.I. </label><input type="text" id="epi" title="Enter the sett (in ends per inch) of the project" autocomplete="off"/>
+          <label for="epi">Reed size (epi) </label><input type="text" id="epi" title="Enter the sett (in ends per inch) of the project"  required autocomplete="off"/>
         </div>
         <div class="formfield">
           <label for="floating"># of floating selvedges</label> <input type="text" id="floating" value="0" autocomplete="off" />
         </div>
         <div class="formfield calc">
-          <label for="totalends">Total ends - CALCULATED</label><output type="text" id="totalends" value="" />
+          <label for="totalends">Total ends</label><output type="text" id="totalends" value="" />
         </div>
         <div class="formfield">
-          <label for="numpieces">Number of pieces </label><input type="text" id="numpieces" value="1" autocomplete="off"/>
-        </div>
-        <div class="formfield">
-          <label for="finishedlength">Desired length (inches)</label><input type="text" id="finishedlength" autocomplete="off"/>
+          <label for="finishedlength">Desired length of object (inches)</label><input type="text" id="finishedlength" required autocomplete="off"/>
+        </div><div class="formfield">
+          <label for="numpieces">Number of objects </label><input type="text" id="numpieces" value="1" autocomplete="off"/>
         </div>
         <div class="formfield">
           <label for="loomwaste">Loom waste (inches)</label><input type="text" id="loomwaste" autocomplete="off" />
         </div>
         <div class="formfield">
-          <label for="fringe">Fringe length (inches, per side)</label><input type="text" id="fringe" value="0" autocomplete="off"/>
+          <label for="fringe">Fringe length (inches, each side)</label><input type="text" id="fringe" value="0" autocomplete="off"/>
         </div>
         <div class="formfield">
           <label for="takeup">Warp take-up (%)</label><input type="text" id="takeup" value="10" autocomplete="off"/>
@@ -62,31 +70,35 @@
           <label for="hemwidth">Hem and other (inches)</label><input type="text" id="hemwidth" value="0" autocomplete="off" />
         </div>
         <div class="formfield calc">
-          <label for="totallength">Total length (inches) - CALCULATED</label><output type="text" id="totallength" value="" />
+          <label for="piecelength">Weave each piece to (inches)</label> <output type="text" id="piecelength" />
         </div>
         <div class="formfield calc">
-          <label for="piecelength">Weave each piece to (inches) - CALCULATED</label> <output type="text" id="piecelength" />
+          <label for="totallength">Total length of warp (inches) </label><output type="text" id="totallength" value="" />
         </div>
+        <div class="formfield calc">
+          <label for="warpyarnyd">Total warp yarn (yards)</label> <output type="text" id="warpyarnyd" />
+        </div>
+        
           <div class="controls">
             <button type="button" id="calculatewarp" >Calculate warp</button>
             <button id="resetwarp" type="button" >Clear warp entries</button>
         </div>
       </div>
     </div>
-    <div class="group calcs">
-      <h3>Weft</h3>
+    <div class="group calcs weftform clear">
+      <h2>Weft</h2>
         <div class="innerform">
           <div class="formfield calc">
-            <label for="widthinreed1">Width in reed (inches) - from warp calculation</label> <output id="widthinreed1" >
+            <label for="widthinreed1">Width in reed (inches)</label> <output id="widthinreed1" >
           </div>
           <div class="formfield">
             <label for="wefttakeup">Weft take-up (%) </label><input type="text" id="wefttakeup" title="Enter the estimated weft take-up percentage" value="10" autocomplete="off" /> 
           </div>
           <div class="formfield">
-            <label for="picksperinch">Picks per inch (PPI)</label><input type="text" id="picksperinch" title="Enter the intended weft picks per inch" autocomplete="off"/> 
+            <label for="picksperinch">Picks per inch (PPI)</label><input type="text" id="picksperinch" title="Enter the intended weft picks per inch" required autocomplete="off"/> 
           </div>
           <div class="formfield calc">
-            <label for="totalweft">Total length of weft (yards) - CALCULATED</label> <output id="totalweft" >
+            <label for="totalweft">Total length of weft (yards)</label> <output id="totalweft" >
           </div>
           <div class="controls">
               <button type="button" id="calculateweft">Calculate weft</button>
@@ -94,8 +106,8 @@
           </div>
         </div>
       </div>
-      <div class="group projectdetails">
-        <h3>Project Details (for printout)</h3>
+      <div class="group projectdetails clear">
+        <h2>Project Details (for printout)</h2>
         <div class="innerform">
           <div class="formfield large">
             <label for="projectname">Project name</label><input type="text" id="projectname" title="Enter project name" autocomlete="off"/>
@@ -107,17 +119,18 @@
           <div class="formfield medium">
             <label for="weavestructure">Weave structure</label><input type="text" id="weavestructure" title="What is the weave structure? ie tabby, twill"  />
           </div>
+          <div class="formfield large">
+            <label for="loom">Loom</label><input type="text" id="loom"  />
+          </div>
           <div class="formfield medium">
             <label for="threadingpattern">Threading pattern</label>
             <input type="text" id="threadingpattern"  />
           </div>
           <div class="formfield medium">
             <label for="treadlingpattern">Treadling pattern</label>
-            <input type="text" id="treadlingpattern" placeholder="Treddling pattern " />
+            <input type="text" id="treadlingpattern"  />
           </div>
-          <div class="formfield large">
-            <label for="loom">Loom</label><input type="text" id="loom"  />
-          </div>
+          
           <div class="formfield medium">
             <label for="warpyarn">Warp yarn</label><input type="text" id="warpyarn"  />
           </div>
@@ -132,6 +145,48 @@
         <div class="controls">
           <button id="print" type="button" value="print">Print</button>
         </div>
+      </div>
+  </section>
+  <section class="bottom">
+    <section id="help">
+      <h2>Instructions and Help</h2>
+      <p>To use the calculator:</p>
+        <ul>
+        <li>1. Enter warp inputs in Warp section</li>
+        <li>2. Press "Calculate warp" to finish warp measurements</li>
+        <li>3. Enter empty weft inputs</li>
+        <li>4. Press "Calculate weft" to finish weft measurements</li>
+      </ul>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>This weaving calculator and project planner was inspired by and based on a printed version created by Pamela Bliss, a well-known and loved weaving instructor in Denver. I hope you use it and enjoy it! Please send any feedback, feature requests, or questions to me using the contact form.</p>
+    </section>
+    <section id="feedback">
+      <h2>Contact</h2>
+      
+      <div id="form-messages"></div>
+      <form id="ajax-contact" method="post" action="mailer.php">
+        <div class="field name">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+
+        <div class="field email">
+            <input type="email" id="email" name="email" placeholder="Email address"required>
+        </div>
+
+        <div class="field message">
+            <textarea id="message" name="message" placeholder="Your message goes here" required></textarea>
+        </div>
+
+        <div class="field controls">
+            <button type="submit">Send</button>
+        </div>
+      </form>
+      
+    </section>
+    <div id="back_to_top">
+        <a href="#">Back to top</a>
       </div>
   </section>
 </body>
