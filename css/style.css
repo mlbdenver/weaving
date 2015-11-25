@@ -105,16 +105,16 @@ a {
 
 .main {
   display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: justify;
-            justify-content: space-around;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+          -webkit-box-pack: center;
+   -webkit-justify-content: center;
+             -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-flex-wrap: wrap;
+       -ms-flex-wrap: wrap;
+           flex-wrap: wrap;
   text-align: center;
   height: auto;
   padding: 15px 25px;
@@ -123,14 +123,14 @@ a {
   }
 
 .group {
-  display: inline-block;
+  /display: block;
   width: 48%;
-  min-width: 475px;
-  margin: 10px 0;
+  min-width: 410px;
+  margin: 10px 10px 10px 0;
   border-radius: 5px;
   background: #D9CEB2;
   overflow: hidden;
-  float:left;
+  -webkit-flex: 1 1 410px;
 }
 
 .group h2 {
@@ -142,18 +142,21 @@ a {
 }
 
 .innerform {
+  min-width: 390px;
   padding: 0 15px;
+  margin: 0 auto;
 }
 
 .formfield {
+  width: 100%;
   clear: both;
   display: block;
   padding: 0 5px;
+  margin: 0 auto;
   height: 26px;
   vertical-align: middle;
   overflow: hidden;
   text-align: left;
-  border-bottom: 1px dotted black;
 }
 
 
@@ -161,13 +164,12 @@ label {
   display:inline-block;
   float: left;
   width: 300px;
-  text-align: left;
-  margin: 5px auto;
+  text-align: right;
   vertical-align: middle;
+  color: #7A6A53
 }
 input, output {
-  width: 80px;
-  margin-top: 4px;
+  width: 50px;
   padding: 0 5px;
   text-align: left;
   background-color: white;
@@ -179,11 +181,7 @@ input, output {
   vertical-align: bottom;
   -webkit-appearance: none;
   appearance: none;
-  color: gray;
-}
-
-input:focus, textarea:focus {
-  /border-bottom: solid 2px #969696;
+  color: #7A6A53;
 }
 
 output {
@@ -191,41 +189,32 @@ output {
 }
 
 .calcs .innerform input, .calcs .innerform output {
-  float: right;
+  float: left;
+  margin-left: 20px;
   }
-
-.projectdetails .innerform{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
 
 
 .projectdetails {
-  min-width: 475;
+  min-width: 410px;
   width: 98%;
 }
 .projectdetails .formfield {
-  display: block;
+  display: inline-block;
+  margin: none;
   min-height: 64px;
   padding: 0;
   border: none;
 }
 
 .projectdetails .formfield input {
+
   height: 36px;
 }
 
 .projectdetails .formfield label{
-  margin: 2px;
+  text-align: left;
+  width: 100%;
+  margin: 2px 0;
 }
 
 .projectdetails textarea {
@@ -233,33 +222,33 @@ output {
   border: none;
 }
 .innerform  .large {
-  width: 380px;
+  width: 69%;
 }
 
 .innerform .large input {
-    width: 360px;
+    width: 100%;
   }
 
 .innerform .small {
-  width: 120px;
+  width: 19%;
 }
 .innerform .small input {
-  width: 100px;
+  width: 100%;
 }
 
 .innerform .medium{
-  width: 240px;
+  width: 44%;
 }
 .innerform .medium input{
-  width: 220px;
+  width: 100%;
 }
 .innerform  .exlarge {
-  width: 90%;
-  height: 140px;
+  width: 88%;
+  height: 150px;
 }
 
 .innerform .exlarge textarea {
-  /height: 130px;
+  width: 100%;
   }
 /* ----------------Other Sections--------------- */
 
@@ -285,51 +274,41 @@ output {
   }
 
 .bottom section {
-  display: inline-block;
-  min-width: 475px;
+  display: block;
+  min-width: 410px;
   margin: 10px 0;
-  /min-height: 400px;
   float: left;
   background-color: #948C75;
   border-radius: 5px;
  padding: 15px 25px;
   text-align: left;
+  font-size: 1.6rem;
   line-height:  normal;
 
 }
 .bottom #help {
   width: 98%;
-  /text-align: left;
-  font-size: 1.6rem;
-
 }
+
 .bottom #about, .bottom #feedback {
   width: 48%;
+  margin-left: 10px;
+  -webkit-flex: 1 1 410px;
   }
 
 .bottom h2 {
   color: #D5DED9;
-  /font-size: 4rem;
   text-shadow: 0px 2px 3px #000;
   text-align: left;
-
-}
-
-#about p {
-  font-size: 2rem;
-  margin: 20px 10px;
-}
-#feedback {
-  /min-height: 600px;
-  /background-color:#D9CEB2;
-  /background-image: url(../images/argyle.png);
-  /position: relative;
 }
 
 #feedback form {
   margin-top: 10px;
 }
 
+#feedback {
+  font-size: 1rem;
+}
   #feedback .field {
   display: block;
   padding: 0;
@@ -337,6 +316,7 @@ output {
   border: 0;
   clear: both;
   overflow: hidden;
+  font-size: inherit;
   }
 
 #feedback .name input, #feedback .email input{
@@ -345,17 +325,16 @@ output {
   padding: 10px;
   margin-bottom: 10px;
   height: 42px;
-  /font-size: 1.4rem;
-    border-radius: 3px;
+  font-size: inherit;
+  border-radius: 3px;
 }
 
   #feedback textarea {
     width: 100%;
     height: 200px;
     padding: 10px;
-    /font-size: 1.4rem;
+    font-size: inherit;
     border-radius: 3px;
-    /border: 1px solid #D9D9D9;
     color: gray;
   }
 
@@ -366,9 +345,7 @@ output {
     color: #468847;
     background-color: #dff0d8;
     border: 1px solid #d6e9c6;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+    border-radius: 4px;
   }
 
   #feedback .error {
@@ -378,9 +355,7 @@ output {
     color: #b94a48;
     background-color: #f2dede;
     border: 1px solid rgba(185, 74, 72, 0.3);
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+    border-radius: 4px;
   }
 
 .backtotop {
@@ -393,18 +368,15 @@ output {
 /* ----------------Buttons--------------- */
 .controls button {
   box-shadow:none;
-  /background:linear-gradient(to bottom, #99B2B7 5%, #D5DED9 100%);
-  /filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#99B2B7', endColorstr='#D5DED9',GradientType=0);
   background-color:#99B2B7;
   border-radius:5px;
-  /border:1px solid #99B2B7;
   border: none;
   display:inline-block;
   cursor:pointer;
   color: #7A6A53;
   color:#ffffff;
-  padding:16px 24px;
-  margin: 15px;
+  padding: 1rem;
+  margin: 10px;
   text-decoration:none;
 }
 .controls button:hover {
@@ -442,6 +414,9 @@ output {
 /* ----------------Media Queries--------------- */
 @media (max-width: 800px) {
 
+  .group {
+    float: right;
+  }
   .banner .nav {
     width: 120px;
     float: right;
@@ -486,6 +461,97 @@ output {
 .main img {
 display: none;
 }
+
+.projectdetails .formfield {
+  width: 100%;
+}
+.projectdetails .formfield input{
+  width: 100%;
+}
+}
+
+@media print {
+
+  @page {
+    size: letter;
+  }
+  body {
+    font-size: 10pt;
+    background: white;
+    }
+
+    .banner .nav, .banner .heading p, .bottom, .controls {
+    display: none;
+  }
+
+  .banner .heading h1 {
+    font-size: 16pt;
+  }
+
+.main {
+    width: auto;
+    margin: 2%;
+    padding: 0;
+    border: 0;
+  }
+  .group {
+    display: inline-block;
+    width: 45%;
+    min-width: 0pt;
+    max-width: 250pt;
+    margin: 0;
+    border: 1px solid black;
+    float: left;
+  }
+
+  .innerform {
+  width: 100%;
+  min-width: 0pt;
+  padding: 0;
+  margin: 0 auto;
+  font-size: inherit;
+}
+
+.formfield {
+  width: 100%;
+  height: 14pt;
+  min-width: 0;
+  font-size: inherit;
+}
+
+label {
+  width: 210px;
+  font-size: inherit;
+  padding: 0 10px;
+}
+input, output {
+  width: 30px;
+  font-size: inherit !important;
+  padding: 0px 5px;
+  margin-top: -5px;
+}
+
+  .group h2 {
+    font-size: 16pt;
+  }
+
+  .group input, .group output {
+    font-size: inherit;
+    line-height: 12pt;
+  }
+
+  .projectdetails {
+    width: 100%;
+    min-width: 500pt;
+  }
+  .projectdetails .formfield {
+    min-height: 20pt;
+    display: inline-block;
+  }
+  .projectdetails .formfield input{
+    min-height: 16pt;
+    font-size: 12pt;
+  }
 }
 
 
